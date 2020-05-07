@@ -1,0 +1,44 @@
+<div class="card">
+    <form>
+        <div class="card-header">
+            Créer une partie
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Configuration de la partie</h5>
+            <div class="form-group">
+                <label for="label">Nom de la partie</label>
+                <input type="text" [(ngModel)]="game.label" placeholder="Entrez le nom de la partie" name="label" class="form-control" id="label">
+            </div>
+
+            <div class="form-group">
+                <label for="couleur">Vous prenez les</label>
+                <select [(ngModel)]="color" name="color" class="form-control" id="color">
+                  <option value="black">Noir</option>
+                  <option value="white">Blanc</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="couleur">Règles de jeu</label>
+                <select [(ngModel)]="game.rules" name="rules" class="form-control" id="rules">
+                  <option value="japanese">Japonaise</option>
+                  <option value="chinese">Chinoise</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="couleur">Taille du goban</label>
+                <select [(ngModel)]="game.size" name="size" class="form-control" id="size">
+                  <option value="9x9">9x9</option>
+                  <option value="13x13">13x13</option>
+                  <option value="19x19">19x19</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-footer text-right"><button (click)="saveGame()" class="btn btn-success">Créer</button></div>
+    </form>
+</div>
+
+<div class="text-right mt-4">
+    <a routerLink="/games" class="btn btn-secondary btn-sm">Retour</a>
+</div>

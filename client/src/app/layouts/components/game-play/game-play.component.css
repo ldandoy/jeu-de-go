@@ -1,0 +1,81 @@
+#goban {
+    margin: auto;
+    /*border: 1px solid #f00;*/
+    background: url('/assets/goban.jpg');
+}
+
+.no-border {
+    border: none!important;
+}
+
+#goban .ligne {
+    display: flex;
+    justify-content: center;
+}
+
+#goban .case {
+    display: flex;
+    align-items: center;
+}
+
+#goban .ligne .case {
+    border: 1px solid #000;
+}
+
+.gobanclick {
+    position: absolute;
+}
+
+.ligneclick {
+    display: flex;
+    justify-content: center;
+}
+
+.caseclick {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*border: 1px solid #f00;*/
+}
+
+.caseclick .pierre-b {
+    border-radius: 40px;
+    background: black;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.caseclick .pierre-w {
+    border-radius: 40px;
+    background: white;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#goban.goban-9 {
+    width: 600px;
+    position: relative;
+}
+
+#goban.goban-9 .ligne .case {
+    width: 50px;
+    height: 50px;
+}
+
+#goban.goban-9 .gobanclick {
+    top: 25px;
+    left: 75px;
+}
+
+#goban.goban-9 .gobanclick .caseclick {
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+}
+
+#goban.goban-9 .gobanclick .small .caseclick {
+    width: 50px;
+    height: 50px;
+}

@@ -1,0 +1,50 @@
+<div class="row mt-4">
+    <div class="col-12 text-center">
+        <h2>{{ game.label }}</h2><br />
+        <p><span class="pierre-w"></span> {{ game.white }} - <span class="pierre-b"></span> {{ game.black }}</p>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-9">
+        <div id="goban" class="goban-{{ size }}">
+            <!-- Ligne for click -->
+            <div class="gobanclick">
+                <div class="ligneclick" *ngFor="let item of [].constructor(size); let ligne = index">
+                    <div class="caseclick" (click)="playCase(ligne, colone)" *ngFor="let item of [].constructor(size); let colone = index">
+                        <div class="pierre-{{ goban[ligne][colone] }}"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ligne for visuel -->
+            <div class="ligne">
+                <div class="case no-border"></div>
+                <div class="case no-border" *ngFor="let item of [].constructor(size); let colone = index"></div>
+                <div class="case no-border"></div>
+            </div>
+            <div class="ligne" *ngFor="let item of [].constructor(size-1); let ligne = index">
+                <div class="case no-border">
+                </div>
+                <div class="case" *ngFor="let item of [].constructor(size-1); let colone = index">
+
+                </div>
+                <div class="case no-border"></div>
+            </div>
+            <div class="ligne">
+                <div class="case no-border"></div>
+                <div class="case no-border" *ngFor="let item of [].constructor(size); let colone = index"></div>
+                <div class="case no-border"></div>
+            </div>
+        </div>
+    </div>
+    <div class="col-3">
+
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-12 text-right">
+        <a routerLink="/games" class="btn btn-secondary btn-sm">Retour</a>
+    </div>
+</div>
